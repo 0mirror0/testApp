@@ -1,0 +1,53 @@
+page-creative-work {
+    .menuNav {
+        // display: flex;
+        // justify-content: space-around;
+        // flex-wrap: wrap;
+        border-radius: 5px;
+        ion-row {
+            ion-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #f8f9f9;
+                border-radius: 5px;
+                span {
+                    line-height: 12vw;
+                }
+            }
+        }
+        ion-list {
+            flex: 1;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        .menuNavText {
+            font-size: 0.5vw;
+        }
+        ion-label {
+            text-align: center;
+            font-size: 3vw;
+        }
+        ion-icon {
+            color: #488aff;
+            font-size: 3em;
+        }
+    }
+    .profitNav {
+        &-money {
+            display: flex;
+            justify-content: space-around;
+            div {
+                width: 27vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #f8f9f9;
+                border-radius: 5px;
+            }
+        }
+    }
+}

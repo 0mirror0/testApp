@@ -1,0 +1,233 @@
+<!--
+  Generated template for the MiYouCoinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>获取米游币</ion-title>
+    </ion-navbar>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 offset-1 class="titleNav" (click)="record()">
+                <ion-col>
+                    <ion-icon name="ios-nutrition"></ion-icon>
+                    <span class="strong">240</span>
+                </ion-col>
+                <ion-col offset-2>
+                    <span>获取记录</span>
+                    <ion-icon class="write" name="ios-arrow-forward"></ion-icon>
+                </ion-col>
+            </ion-col>
+
+            <ion-col col-3 offset-1 class="titleNav" (click)="exchange()">
+                <ion-icon name="ios-rose"></ion-icon>
+                <span>兑换中心</span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-segment [(ngModel)]="relationship" color="primary">
+        <ion-segment-button value="task">
+            米游币任务
+        </ion-segment-button>
+        <ion-segment-button value="activity">
+            米游币活动
+        </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="relationship">
+        <ion-list *ngSwitchCase="'task'">
+            <div>
+                <ion-grid>
+                    <ion-row style="font-weight: 700;">每日任务</ion-row>
+                    <ion-row>今日获取米游币上限&nbsp;&nbsp;
+                        <span style="color: orange;">30</span>/<span>110</span>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务一 -->
+                <ion-grid class="daily" (click)="Sign()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-bookmarks-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">讨论区签到</span>
+                            <span class="daily-rule">奖励规则</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+30</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span>1/1</span><br>
+                            <!-- <ion-progress-bar></ion-progress-bar> -->
+                            <progress-bar total="1" amount="1"></progress-bar>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务二 -->
+                <ion-grid class="daily" (click)="browse()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-browsers-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">浏览三个帖子</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+20</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span>2/3</span><br>
+                            <!-- <ion-progress-bar></ion-progress-bar> -->
+                            <progress-bar total="3" amount="2"></progress-bar>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务三 -->
+                <ion-grid class="daily" (click)="pretty()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-heart-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">完成五次点赞</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+30</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span>3/5</span><br>
+                            <!-- <ion-progress-bar></ion-progress-bar> -->
+                            <progress-bar total="5" amount="3"></progress-bar>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务四 -->
+                <ion-grid class="daily" (click)="share()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-open-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">分享帖子</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+10</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span>0/1</span><br>
+                            <!-- <ion-progress-bar></ion-progress-bar> -->
+                            <progress-bar total="1" amount="0"></progress-bar>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div>
+
+                <p style="font-weight: 700;">更多任务</p>
+                <!-- 任务一 -->
+                <ion-grid class="daily" (click)="playRole()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-contact-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">绑定游戏角色</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+80</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span class="daily-progress-more">已完成</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务二 -->
+                <ion-grid class="daily" (click)="realName()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-paper-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">完成实名认证</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+80</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span class="daily-progress-more">已完成</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <!-- 任务三 -->
+                <ion-grid class="daily" (click)="autograph()">
+                    <ion-row>
+                        <ion-col col-2 class="daily-task">
+                            <ion-icon name="ios-pricetag-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-7>
+                            <span class="daily-sign">修改个性签名</span><br>
+                            <ion-icon name="ios-nutrition"></ion-icon>
+                            <span>+80</span>
+                        </ion-col>
+                        <ion-col col-3 class="daily-progress">
+                            <span class="daily-progress-more">待完成</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'activity'">
+            <p style="font-weight: 700;">更多任务</p>
+            <!-- 任务一 -->
+            <ion-grid class="daily" (click)="activity()">
+                <ion-row>
+                    <ion-col col-2 class="daily-task">
+                        <ion-icon name="ios-bookmarks-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col col-7>
+                        <span class="daily-sign">绑定游戏角色</span><br>
+                        <ion-icon name="ios-nutrition"></ion-icon>
+                        <span>+80</span>
+                    </ion-col>
+                    <ion-col col-3 class="daily-progress">
+                        <span>已完成</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 任务二 -->
+            <ion-grid class="daily" (click)="activity()">
+                <ion-row>
+                    <ion-col col-2 class="daily-task">
+                        <ion-icon name="ios-bookmarks-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col col-7>
+                        <span class="daily-sign">完成实名认证</span><br>
+                        <ion-icon name="ios-nutrition"></ion-icon>
+                        <span>+80</span>
+                    </ion-col>
+                    <ion-col col-3 class="daily-progress">
+                        <span>已完成</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <!-- 任务三 -->
+            <ion-grid class="daily" (click)="activity()">
+                <ion-row>
+                    <ion-col col-2 class="daily-task">
+                        <ion-icon name="ios-bookmarks-outline"></ion-icon>
+                    </ion-col>
+                    <ion-col col-7>
+                        <span class="daily-sign">修改个性签名</span><br>
+                        <ion-icon name="ios-nutrition"></ion-icon>
+                        <span>+80</span>
+                    </ion-col>
+                    <ion-col col-3 class="daily-progress">
+                        <span>待完成</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+    </div>
+</ion-content>

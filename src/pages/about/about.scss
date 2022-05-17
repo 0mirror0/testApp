@@ -1,0 +1,16 @@
+page-about {
+    ion-content {
+        .slide {
+            height: auto;
+            ion-slide {
+                border-radius: 5%;
+                display: hidden;
+                img {
+                    width: 100%;
+                    // height: 100%;
+                    border-radius: 5vw;
+                }
+            }
+        }
+    }
+}

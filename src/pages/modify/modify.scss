@@ -1,0 +1,28 @@
+page-modify {
+    ion-header {
+        .bar-buttons {
+            margin-right: 5px;
+        }
+    }
+    ion-content {
+        .portrait {
+            ion-avatar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            img {
+                width: 30%;
+                height: 30%;
+                border-radius: 50%;
+            }
+            button {
+                color: rgb(101, 97, 97);
+                font-weight: 600;
+                line-height: 30px;
+                background-color: transparent;
+            }
+        }
+    }
+}

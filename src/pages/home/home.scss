@@ -1,0 +1,10 @@
+page-home {
+    ion-content {
+        .banner {
+            ion-label {
+                display: flex !important;
+                justify-content: space-around !important;
+            }
+        }
+    }
+}

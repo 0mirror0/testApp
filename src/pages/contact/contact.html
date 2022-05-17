@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar no-lines>
+        <ion-title>
+            消息
+        </ion-title>
+        <ion-buttons end>
+            <button>
+            <ion-icon name="ios-cog"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content has-bouncing="true" on-drag-up="scrollDragUp()">
+    <!-- 导航 -->
+    <ion-grid class="nav">
+        <ion-row>
+            <ion-col col-4 (click)="information()">
+                <ion-row>
+                    <ion-col class="nav-msg">
+                        <span class="nav-msg-one">
+                          <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+                        </span>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        回复我的
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col col-4 (click)="information()">
+                <ion-row>
+                    <ion-col class="nav-msg">
+                        <span class="nav-msg-two">
+                           <ion-icon name="ios-checkbox-outline"></ion-icon>
+                        </span>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        收到的赞
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col col-4 (click)="information()">
+                <ion-row>
+                    <ion-col class="nav-msg">
+                        <span class="nav-msg-three">
+                          <ion-icon name="ios-information-circle-outline"></ion-icon>
+                        </span>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        系统通知
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!-- 头像列表 回复 -->
+    <ion-list>
+        <ion-item (click)="replyInformation()">
+            <ion-avatar item-start>
+                <img src="https://img1.baidu.com/it/u=4026805356,1873485764&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+            </ion-avatar>
+            <h2>可爱就是天理</h2>
+            <p>_(糖葫芦)</p>
+            <span item-end>{{nowTime}}</span>
+        </ion-item>
+
+        <ion-item *ngFor="let item of list" (click)="replyInformation()">
+            <ion-avatar item-start>
+                <img src="https://img2.baidu.com/it/u=2913764327,900854467&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+            </ion-avatar>
+            <h2>心原</h2>
+            <p>_(笔心心)</p>
+            <span item-end>{{nowTime}}</span>
+        </ion-item>
+
+    </ion-list>
+
+    <!-- 上拉到底显示内容 -->
+    <!-- threshold--距离底部多少触发事件 $event加载事件 -->
+    <ion-infinite-scroll threshold="10%" (ionInfinite)="loadData($event)">
+        <!-- loadingSpinner--加载时显示的图标 loadingText--加载时显示的文字 -->
+        <ion-infinite-scroll-content loadingSpinner loadingText="正在加载更多的数据...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

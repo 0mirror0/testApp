@@ -1,0 +1,74 @@
+<!--
+  Generated template for the BadgePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header [style.background]="bGroundColor?bGroundColor:'#fff'">
+    <ion-navbar>
+        <ion-title>{{ data.name }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding [style.background]="bGroundColor?bGroundColor:'#fff'">
+    <ion-list>
+        <ion-item>
+            <img [src]="data.image" alt="">
+        </ion-item>
+        <ion-item>
+            <ion-icon name="logo-twitter" item-start></ion-icon>
+            {{ data.name }}
+            <ion-badge item-end>260k</ion-badge>
+        </ion-item>
+        <ion-list>
+            <button block ion-button (click)="presentActionSheet()">操作表</button>
+        </ion-list>
+        <ion-list class="bgChange">
+            <button ion-button color="light" (click)="backLight()">白色</button>
+            <button ion-button (click)="backPrimary()">蓝色</button>
+            <button ion-button color="secondary" (click)="backSecondary()">青绿色</button>
+            <button ion-button color="dark" (click)="backDark()">黑色</button>
+        </ion-list>
+    </ion-list>
+
+    <ion-card>
+        <ion-card-header>
+            查看
+        </ion-card-header>
+
+        <ion-list>
+            <button ion-item (click)="presentPopover(data.rumor)">
+            <ion-icon name="cart" item-start></ion-icon>
+            <span *ngIf="data.rumor">{{data.rumor.name}}</span>
+            <span *ngIf="!data.rumor">购物</span>
+          </button>
+
+            <button ion-item (click)="presentPopover(data.story)">
+            <ion-icon name="medical" item-start></ion-icon>
+            <span *ngIf="data.story">{{data.story.name}}</span>
+            <span *ngIf="!data.story">医院</span>
+          </button>
+
+            <button ion-item (click)="presentPopover()">
+            <ion-icon name="cafe" item-start></ion-icon>
+            <span>咖啡店</span>
+          </button>
+
+            <button ion-item (click)="presentPopover()">
+            <ion-icon name="paw" item-start></ion-icon>
+            <span>狗狗公园</span>
+          </button>
+
+            <button ion-item (click)="presentPopover()">
+            <ion-icon name="beer" item-start></ion-icon>
+            <span>酒馆</span>
+          </button>
+
+            <button ion-item (click)="presentPopover()">
+            <ion-icon name="planet" item-start></ion-icon>
+            <span>空间</span>
+          </button>
+
+        </ion-list>
+    </ion-card>
+</ion-content>

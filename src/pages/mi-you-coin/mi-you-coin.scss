@@ -1,0 +1,56 @@
+page-mi-you-coin {
+    ion-header {
+        background-color: #488aff;
+        padding-bottom: 20px;
+        .titleNav {
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            background-color: rgba(#000, .3);
+            .strong {
+                font-weight: 700;
+            }
+            .write {
+                color: #fff;
+            }
+            ion-icon {
+                color: yellow;
+            }
+        }
+    }
+    ion-content {
+        .scroll-content {
+            margin-top: 100px;
+            background-color: rgba($color: #ccc, $alpha: .3);
+        }
+        .daily {
+            border-radius: 5px;
+            margin: 10px 0;
+            color: rgb(74, 68, 68);
+            background-color: #fff;
+            // 标签图标
+            &-task {
+                font-size: 20px;
+                text-align: center;
+                line-height: 40px;
+            }
+            &-progress {
+                text-align: right;
+                &-more {
+                    border-radius: 3px;
+                    padding: 5px 10px;
+                    line-height: 40px;
+                    background-color: rgba(0, 0, 0, .1);
+                }
+            }
+            // 签到
+            &-sign {
+                font-weight: 700;
+            }
+            &-rule {
+                font-size: 12px;
+                color: #ccc;
+            }
+        }
+    }
+}

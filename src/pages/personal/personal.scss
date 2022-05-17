@@ -1,0 +1,60 @@
+page-personal {
+    ion-content {
+        background-image: url("https://img2.baidu.com/it/u=2011747643,1580932474&fm=253&fmt=auto&app=138&f=JPEG?w=720&h=320");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        .header {
+            button {
+                color: #fff;
+                font-size: 30px;
+                background-color: transparent;
+            }
+        }
+        // 卡片
+        .card {
+            margin-top: 70px;
+            border-radius: 5px;
+            ion-col {
+                text-align: center;
+            }
+            &-edit {
+                display: flex;
+                align-items: center;
+                button {
+                    padding: 5px 10px;
+                    background-color: #fff;
+                    border: 1px solid rgb(90, 88, 88);
+                    border-radius: 5px;
+                }
+            }
+        }
+        .reveal {
+            color: #fff;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            &-bgImgOne {
+                background-image: url("https://img0.baidu.com/it/u=842887952,3465152577&fm=253&fmt=auto&app=138&f=JPEG?w=881&h=500");
+                background-size: 100%;
+            }
+            &-bgImgTwo {
+                background-image: url("https://img2.baidu.com/it/u=972539798,287724442&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=360");
+                background-size: 100%;
+            }
+            &-bgImgThree {
+                background-image: url("https://img1.baidu.com/it/u=446039825,2285017596&fm=253&fmt=auto&app=138&f=JPEG?w=1157&h=500");
+                background-size: 100% 100%;
+            }
+        }
+        .reveal>ion-row>ion-col {
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        // .supper {
+        //     height: 100px;
+        //     ion-slide {
+        //         width: 150px !important;
+        //         border-radius: 10px;
+        //     }
+        // }
+    }
+}

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            About
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="https://img1.baidu.com/it/u=3687150503,455775476&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+            </ion-avatar>
+            <h2>Cher</h2>
+            <p>Ugh. As if.</p>
+        </ion-item>
+    </ion-list>
+
+    <ion-slides class="slide" pager slidesPerView="1.5" spaceBetween="50">
+
+        <ion-slide *ngFor="let item of images">
+            <img src="{{item}}" />
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-list>
+        <button ion-button block (click)="onCamera()">相机</button>
+        <button ion-button block [navPush]="pushScanner">扫一扫</button>
+        <button ion-button block (click)="onCalendar()">日历</button>
+    </ion-list>
+
+    <!-- <ion-list>
+        <button ion-button block (click)="openCamera()">
+            打开摄像头
+        </button>
+        <button ion-button (click)="upload()">文件上传</button>
+        <button ion-button (click)="download()">文件下载</button>
+        <div>
+            <img [src]="path" alt="">
+        </div>
+    </ion-list> -->
+
+    <!-- <ion-list *ngFor="let item of listData ">
+        <ion-item>
+            <ion-avatar item-left>
+                <img [src]="item?.url " alt=" ">
+            </ion-avatar>
+            {{item?.title}}
+        </ion-item>
+    </ion-list> -->
+</ion-content>

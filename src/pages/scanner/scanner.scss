@@ -1,0 +1,51 @@
+page-scanner {
+    .qrscanner {
+        background: none;
+        &-area {
+            width: 100%;
+            height: 86%;
+            // background: url(https://ms.bdimg.com/pacific/0/pic/213142136_112050379.png?x=0&y=0&h=150&w=242&vh=150.00&vw=242.00&oh=150.00&ow=242.00) no-repeat center center;
+            // background-size: contain;
+        }
+    }
+    .through-line {
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background: red;
+        position: absolute;
+        animation: myfirst 2s linear infinite alternate;
+    }
+    @keyframes myfirst {
+        0% {
+            background-color: red;
+            top: 30%;
+        }
+        25% {
+            background-color: yellow;
+            top: 35%;
+        }
+        50% {
+            background-color: blue;
+            top: 40%;
+        }
+        75% {
+            background-color: green;
+            top: 45%;
+        }
+        100% {
+            background-color: red;
+            top: 50;
+        }
+    }
+    .button-bottom {
+        width: 128px;
+        position: absolute;
+        left: 50%;
+        bottom: 80px;
+        margin-left: -64px;
+        .ion-camera {
+            float: left;
+        }
+    }
+}

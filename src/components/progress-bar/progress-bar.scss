@@ -1,0 +1,56 @@
+progress-bar {
+    div {
+        font-size: 0px;
+    }
+    #n {
+        margin: 10px auto;
+        width: 920px;
+        border: 1px solid #CCC;
+        font-size: 14px;
+        line-height: 30px;
+    }
+    #n a {
+        padding: 0 4px;
+        color: #333
+    }
+    .Bar,
+    .Bars {
+        position: relative;
+        width: 70px;
+        border-radius: 9999px;
+        /* 宽度 */
+        // border: 1px solid #B1D632;
+        background-color: rgba($color: #ccc, $alpha: .5);
+        padding: 1px;
+        margin-top: 3px;
+    }
+    .Bar div,
+    .Bars div {
+        display: block;
+        position: relative;
+        // background: #00F;
+        /* 进度条背景颜色 */
+        background: #333333;
+        height: 5px;
+        /* 高度 */
+        // line-height: 16px;
+        border-radius: 9999px;
+        /* 必须和高度一致，文本才能垂直居中 */
+    }
+    .Bars div {
+        background: color($colors, primary);
+    }
+    .Bar div span,
+    .Bars div span {
+        position: absolute;
+        width: 0px;
+        /* 宽度 */
+        text-align: center;
+        font-weight: bold;
+    }
+    .cent {
+        margin: 0 auto;
+        width: 300px;
+        overflow: hidden
+    }
+}

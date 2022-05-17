@@ -1,0 +1,132 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>首页</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- 统筹 分割 -->
+    <div>
+        <!-- 顶上 -->
+        <div padding>
+            <ion-segment [(ngModel)]="computerGame">
+                <ion-segment-button value="puppies" (click)="shenDisAbleBig()">
+                    原神
+                </ion-segment-button>
+                <ion-segment-button value="kittens" (click)="LOLDisAbleBig()">
+                    英雄联盟
+                </ion-segment-button>
+            </ion-segment>
+        </div>
+
+        <div [ngSwitch]="computerGame">
+            <ion-list *ngSwitchCase="'puppies'">
+                <!-- 原神 -->
+                <div padding>
+                    <ion-segment [(ngModel)]="original">
+                        <ion-segment-button value="menDe">
+                            蒙德
+                        </ion-segment-button>
+                        <ion-segment-button value="liYue">
+                            璃月
+                        </ion-segment-button>
+                        <ion-segment-button value="daoQi">
+                            稻妻
+                        </ion-segment-button>
+                    </ion-segment>
+                </div>
+
+                <div [ngSwitch]="original">
+                    <ion-list *ngSwitchCase="'menDe'">
+                        <button (click)="seeBadge(item.id, item.name, item.image, data[0].story, data[0].rumor)" ion-item *ngFor="let item of data[0].menDe">
+                            <ion-thumbnail item-start>
+                                <img [src]="item.image">
+                            </ion-thumbnail>
+                            <h2>{{item.name}}</h2>
+                        </button>
+                    </ion-list>
+
+                    <ion-list *ngSwitchCase="'liYue'">
+                        <button (click)="seeBadge(item.id, item.name, item.image, data[0].story, data[0].rumor)" ion-item *ngFor="let item of data[0].liYue">
+                            <ion-thumbnail item-start>
+                                <img [src]="item.image">
+                            </ion-thumbnail>
+                            <h2>{{item.name}}</h2>
+                        </button>
+                    </ion-list>
+
+                    <ion-list *ngSwitchCase="'daoQi'">
+                        <button (click)="seeBadge(item.id, item.name, item.image, data[0].story, data[0].rumor)" ion-item *ngFor="let item of data[0].daoQi">
+                            <ion-thumbnail item-start>
+                                <img [src]="item.image">
+                            </ion-thumbnail>
+                            <h2>{{item.name}}</h2>
+                        </button>
+                    </ion-list>
+                </div>
+            </ion-list>
+
+            <ion-list *ngSwitchCase="'kittens'">
+                <!-- 英雄联盟 -->
+                <div padding>
+                    <ion-segment [(ngModel)]="lol">
+                        <ion-segment-button value="hero">
+                            英雄
+                        </ion-segment-button>
+                        <ion-segment-button value="equipment">
+                            装备
+                        </ion-segment-button>
+                    </ion-segment>
+                </div>
+
+                <div [ngSwitch]="lol">
+                    <!-- 装备 -->
+                    <ion-list *ngSwitchCase="'equipment'">
+                        <button (click)="seeBadge(item.id, item.name, item.image, data[1].story, data[1].rumor)" ion-item *ngFor="let item of data[1].equipment">
+                            <ion-thumbnail item-start>
+                                <img src="{{item.image}}">
+                            </ion-thumbnail>
+                            <h2>{{item.name}}</h2>
+                        </button>
+                    </ion-list>
+
+                    <!-- 英雄 -->
+                    <ion-list *ngSwitchCase="'hero'">
+                        <button (click)="seeBadge(item.id, item.name, item.image, data[1].story, data[1].rumor)" ion-item *ngFor="let item of data[1].hero">
+                            <ion-thumbnail item-start>
+                                <img src="{{item.image}}">
+                            </ion-thumbnail>
+                            <h2>{{item.name}}</h2>
+                        </button>
+                    </ion-list>
+                </div>
+            </ion-list>
+        </div>
+    </div>
+    <div padding (click)="homePageClick()">
+        <!-- 原神 -->
+        <ion-list *ngIf="yuanShanDisAble">
+            <ion-item class="banner">
+                <img src="https://img2.baidu.com/it/u=1383014428,2378191010&fm=253&fmt=auto&app=138&f=PNG?w=718&h=500" alt="">
+            </ion-item>
+            <ion-item>
+                <ion-icon name="logo-twitter" item-start></ion-icon>
+                天地万象
+                <ion-badge item-end>360k纯帅</ion-badge>
+            </ion-item>
+        </ion-list>
+
+        <!-- 英雄联盟 -->
+        <ion-list *ngIf="LOLDisAble">
+            <ion-item class="banner">
+                <img src="https://img0.baidu.com/it/u=2300570299,26148068&fm=253&fmt=auto&app=138&f=PNG?w=998&h=486" alt="">
+            </ion-item>
+            <ion-item>
+                <ion-icon name="logo-twitter" item-start></ion-icon>
+                全军出击
+                <ion-badge item-end>360k纯帅</ion-badge>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>

@@ -1,0 +1,95 @@
+<!--
+  Generated template for the CreativeWorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>创作中心</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #f8f9f9;">
+    <!-- 导航菜单 -->
+    <ion-list class="menuNav" style="background-color: #fff;">
+        <ion-row>
+            <ion-col col-3 *ngFor="let item of menuNav" (click)="goSee()">
+                <ion-icon name="{{item.icon}}"></ion-icon>
+                <span class="menuNavText">{{item.name}}</span>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+
+    <!-- 创作币收益 菜单 -->
+    <ion-list inset no-lines class="profitNav" style="background-color: #fff;margin: 0;margin-bottom: 32px;">
+        <button ion-item (click)="goWant()">
+              <ion-icon style="color: blue;" name="md-bulb"></ion-icon>
+              <span style="font-weight: 700;">创作币收益</span>
+              <span item-right>详细数据</span>
+            </button>
+        <!-- 收益列表 -->
+        <ion-list class="profitNav-money">
+            <div>
+                <p>上次结算收益</p>
+                <span>--</span>
+            </div>
+            <div>
+                <p>未结算预估收益</p>
+                <span>--</span>
+            </div>
+            <div>
+                <p>昨日预估收益</p>
+                <span>--</span>
+            </div>
+        </ion-list>
+    </ion-list>
+
+    <!-- 创作数据 菜单 -->
+    <ion-list inset no-lines class="profitNav" style="background-color: #fff;margin: 0;margin-bottom: 32px;">
+        <button ion-item (click)="goWant()">
+            <ion-icon style="color: blue;" name="ios-done-all"></ion-icon>
+            <span style="font-weight: 700;">创作数据</span>
+            <span item-right>详细数据</span>
+          </button>
+        <!-- 数据额列表 -->
+        <ion-list class="profitNav-money">
+            <div>
+                <p>昨日阅读数</p>
+                <span>--</span>
+            </div>
+            <div>
+                <p>昨日赞数</p>
+                <span>--</span>
+            </div>
+            <div>
+                <p>昨日评论数</p>
+                <span>--</span>
+            </div>
+        </ion-list>
+    </ion-list>
+
+    <!-- 创作活动 列表 -->
+    <ion-list inset no-lines class="profitNav" style="background-color: #fff;margin: 0;margin-bottom: 32px;">
+        <button ion-item (click)="goWant()">
+        <ion-icon style="color: blue;" name="ios-paper-outline"></ion-icon>
+        <span style="font-weight: 700;">创作活动</span>
+        <span item-right>更多活动</span>
+      </button>
+        <!-- 头像列表 -->
+        <ion-item (click)="goActivity()">
+            <ion-thumbnail item-start>
+                <img src="https://t15.baidu.com/it/u=3881466235,156827632&fm=30&app=106&size=f242,150&n=0&f=JPEG&fmt=auto?s=A6731E9C1D5179C8065A0DC9030030B9&sec=1651338000&t=103983479c6bd1bab03f8752c08f708c">
+            </ion-thumbnail>
+            <h2>创作之旅</h2>
+            <p>首届线下创作节</p>
+        </ion-item>
+        <ion-item (click)="goActivity()">
+            <ion-thumbnail item-start>
+                <img src="https://t14.baidu.com/it/u=1439648825,157908032&fm=30&app=106&size=f242,150&n=0&f=JPEG&fmt=auto?s=929C7E854AF992571C98C58D0300F083&sec=1651338000&t=46b76dea92606ea50630b3f31b0ba805">
+            </ion-thumbnail>
+            <h2>三周年庆</h2>
+            <p>要求简单，不到一分钟即可完成。米哈游旗下的游戏产品也准备好了游戏周边等奖励，邀请玩家共同庆祝</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+page-contact {
+    ion-header {
+        button {
+            font-size: 20px;
+            background-color: transparent;
+        }
+    }
+    ion-content {
+        .scroll-content {
+            background-color: rgba($color: #ccc, $alpha: .2);
+        }
+        .nav {
+            padding-top: 20px;
+            background-color: #fff;
+            ion-col {
+                text-align: center;
+            }
+            &-msg {
+                span {
+                    font-size: 25px;
+                    padding: 10px 10px 6px;
+                    border-radius: 50%;
+                }
+                &-one {
+                    background-color: orange;
+                }
+                &-two {
+                    background-color: #f53d3d;
+                }
+                &-three {
+                    background-color: #488aff;
+                }
+            }
+        }
+    }
+}

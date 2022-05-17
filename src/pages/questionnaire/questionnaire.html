@@ -1,0 +1,72 @@
+<!--
+  Generated template for the QuestionnairePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            问卷调查
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <!-- 单选 -->
+        <ion-item>
+            <ion-label>性别</ion-label>
+            <ion-select (ngModelChange)="handleModelChange()" [(ngModel)]="sex" interface="popover" okText="确定" cancelText="取消">
+                <ion-option value="man">男</ion-option>
+                <ion-option value="woman">女</ion-option>
+                <ion-option value="secret">保密</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>你知道原神吗？</ion-label>
+            <ion-select (ngModelChange)="handleModelChange()" [(ngModel)]="ifKnow" interface="popover" okText="确定" cancelText="取消">
+                <ion-option value="know">知道</ion-option>
+                <ion-option value="understand">了解</ion-option>
+                <ion-option value="onKnow">不知道</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="ifKnow=='know'||ifKnow=='understand'">
+            <ion-label>你是通过那些渠道知道原神的？</ion-label>
+            <ion-select (ngModelChange)="handleModelChange()" [(ngModel)]="channel" interface="popover" okText="确定" cancelText="取消">
+                <ion-option value="tenet">腾讯消息</ion-option>
+                <ion-option value="classmate">同学</ion-option>
+                <ion-option value="friend">朋友</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="channel">
+            <ion-label>你玩过原神这个游戏吗？</ion-label>
+            <ion-select (ngModelChange)="handleModelChange()" [(ngModel)]="play" interface="popover" okText="确定" cancelText="取消">
+                <ion-option value="personally">玩过</ion-option>
+                <ion-option value="never">没玩过</ion-option>
+                <ion-option value="look">看他人玩过</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- 多选 -->
+        <ion-item *ngIf="play=='personally'||play=='look'">
+            <ion-label>你知道那些原神角色？</ion-label>
+            <ion-select (ngModelChange)="handleModelChange()" [(ngModel)]="role" interface="popover" multiple="true" okText="确定" cancelText="取消">
+                <ion-option value="bacon" selected="wind">温迪</ion-option>
+                <ion-option value="rock">钟离</ion-option>
+                <ion-option value="thunder" selected="true">雷电将军</ion-option>
+                <ion-option value="youLa">优菈</ion-option>
+                <ion-option value="keLi">可莉</ion-option>
+                <ion-option value="ganYu">甘雨</ion-option>
+                <ion-option value="huTao">胡桃</ion-option>
+                <ion-option value="lingHua">神里凌华</ion-option>
+                <ion-option value="baChon">八重神子</ion-option>
+                <ion-option value="lingRen">神里凌人</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
+        <button ion-button block (click)="submitQuestionnaire()">提交</button>
+    </div>
+
+</ion-content>
